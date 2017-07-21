@@ -8,7 +8,8 @@
     "npm": "2.5.1"
   },
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "postinstall": "grunt all"
   },
   "dependencies": {
     "body-parser": "1.13.3",

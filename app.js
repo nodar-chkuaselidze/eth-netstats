@@ -32,13 +32,8 @@ else
 var banned = require('./lib/utils/config').banned;
 
 // Init http server
-if( process.env.NODE_ENV !== 'production' )
-{
-	var app = require('./lib/express');
-	server = http.createServer(app);
-}
-else
-	server = http.createServer();
+var app = require('./lib/express');
+server = http.createServer(app);
 
 // Init socket vars
 var Primus = require('primus');
@@ -408,6 +403,10 @@ var nodeCleanupTimeout = setInterval( function ()
 
 }, 1000*60*60);
 
-server.listen(process.env.PORT || 3000);
+let port = process.env.PORT || 3000
+console.log('Starting listening on: ', port);
+server.listen(port, function () {
+  console.log('started listening on PORT', port);
+});
 
 module.exports = server;

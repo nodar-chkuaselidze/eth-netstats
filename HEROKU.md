@@ -5,3 +5,5 @@ Once you've setup your heroku account and are ready for deployment, you first ne
 `WS_SECRET` accepts just string, or `|` seperated list of secrets. This secret later will be given to the Full Nodes for publishing stats.
 
 Example: `heroku config:set WS_SECRET=SecretForNode1|SecretForNode2`
+
+You can ban IP Addresses in file `lib/utils/config.js`, p.s. trusted array isn't working currently.
